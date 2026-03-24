@@ -1,18 +1,20 @@
 package Hexaware.Assignment_1;
 
 public class Customer {
+
+    private static int nextAccountNumber = 0;
     private int accountNumber;
     private String name;
     private double balance;
     private String accountType;
     private String email;
 
-    public Customer(int accountNumber, String accountType, double balance, String name, String email) {
+    public Customer(String accountType, double balance, String name, String email) {
         this.email = email;
         this.accountType = accountType;
         this.balance = balance;
         this.name = name;
-        this.accountNumber = accountNumber;
+        this.accountNumber = ++nextAccountNumber;
     }
 
     public void deposit(double amount) {
