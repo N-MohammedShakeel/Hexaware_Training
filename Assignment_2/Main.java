@@ -1,8 +1,5 @@
 package Hexaware.Assignment_2;
 
-
-import Hexaware.Assignment_1.Customer;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -94,9 +91,14 @@ public class Main {
                             exists = true;
                             if (e instanceof TemporaryEmployee t) {
                                 System.out.print("Enter Hours Worked: ");
+                                int hw = sc.nextInt();
+                                sc.nextLine();
+                                t.setHoursWorked(hw);
                                 System.out.println("Salary : " + t.calculateSalary());
                             } else if (e instanceof PermanentEmployee p) {
                                 System.out.print("Enter Bonus: ");
+                                double b = sc.nextDouble();
+                                p.setBonus(b);
                                 System.out.println("Salary : " + p.calculateSalary());
                             }
                             break;
