@@ -41,8 +41,20 @@ public class Main {
                     System.out.print("Enter Balance: ");
                     double balance = sc.nextDouble();
 
-                    Customer acc = new Customer(acc_no, name, balance, acc_type, email);
-                    accounts.add(acc);
+                    boolean exists = false;
+                    for (Customer c : accounts) {
+                        if (c.getAccountNumber() == acc_no) {
+                            exists = true;
+                            break;
+                        }
+                    }
+
+                    if (exists) {
+                        System.out.println("Account number already exists!");
+                    } else {
+                        Customer acc = new Customer(acc_no, name, balance, acc_type, email);
+                        accounts.add(acc);
+                    }
 
                     break;
                 }
