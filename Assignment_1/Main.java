@@ -1,4 +1,4 @@
-package Hexaware.Banking_OOPs;
+package Hexaware.Assignment_1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class Main {
 
         List<Customer> accounts = new ArrayList<>();
 
-        System.out.println("Account Creation:");
+        System.out.println("Account Operations");
         System.out.println("1. Create account");
         System.out.println("2. Deposit amount");
         System.out.println("3. Withdraw amount");
@@ -192,8 +192,7 @@ public class Main {
     public static void display(Customer c1){
         if (c1 != null) {
             System.out.printf("\n%-15s %-10s %-20s %-10s %-10s\n", "Name", "Type", "Email", "Acc No", "Balance");
-            System.out.printf("%-15s %-10s %-20s %-10d %-10.2f\n",
-                    c1.getName(), c1.getAccountType(), c1.getEmail(), c1.getAccountNumber(), c1.getBalance());
+            System.out.printf("%-15s %-10s %-20s %-10d %-10.2f\n", c1.getName(), c1.getAccountType(), c1.getEmail(), c1.getAccountNumber(), c1.getBalance());
         } else {
             System.out.println("Account not found.");
         }
