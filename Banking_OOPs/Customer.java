@@ -1,4 +1,4 @@
-package Hexaware;
+package Hexaware.Banking_OOPs;
 
 public class Customer {
     private int accountNumber;
