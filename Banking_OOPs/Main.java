@@ -26,18 +26,19 @@ public class Main {
         while(isNotExit) {
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
+            sc.nextLine();
 
             switch (choice) {
                 case 1: {
                     System.out.print("\nEnter Name: ");
                     String name = sc.nextLine();
-                    System.out.print("\nEnter Account Type: ");
+                    System.out.print("Enter Account Type: ");
                     String acc_type = sc.nextLine();
-                    System.out.print("\nEnter Email: ");
+                    System.out.print("Enter Email: ");
                     String email = sc.nextLine();
-                    System.out.print("\nEnter Account Number: ");
+                    System.out.print("Enter Account Number: ");
                     int acc_no = sc.nextInt();
-                    System.out.print("\nEnter Balance: ");
+                    System.out.print("Enter Balance: ");
                     double balance = sc.nextDouble();
 
                     Customer acc = new Customer(acc_no, name, balance, acc_type, email);
@@ -57,10 +58,11 @@ public class Main {
                         if (c.getAccountNumber() == acc_no) {
                             c.deposit(amt);
                             isAccountExist = true;
+                            break;
                         }
                     }
 
-                    if (isAccountExist) System.out.println("Account Not Found.");
+                    if (!isAccountExist) System.out.println("Account Not Found.");
                     break;
                 }
 
@@ -75,10 +77,11 @@ public class Main {
                         if (c.getAccountNumber() == acc_no) {
                             c.withdraw(amt);
                             isAccountExist = true;
+                            break;
                         }
                     }
 
-                    if (isAccountExist) System.out.println("Account Not Found.");
+                    if (!isAccountExist) System.out.println("Account Not Found.");
                     break;
                 }
 
@@ -92,10 +95,11 @@ public class Main {
                         if (c.getAccountNumber() == acc_no) {
                             System.out.println("Balance: " + c.getBalance());
                             isAccountExist = true;
+                            break;
                         }
                     }
 
-                    if (isAccountExist) System.out.println("Account Not Found.");
+                    if (!isAccountExist) System.out.println("Account Not Found.");
                     break;
                 }
 
@@ -135,6 +139,7 @@ public class Main {
                     int acc_no = sc.nextInt();
                     Customer c1 = null;
 
+                    System.out.println("\nAccount Details");
                     for (Customer c : accounts) {
                         if (c.getAccountNumber() == acc_no) {
                             c1 = c;
@@ -147,18 +152,14 @@ public class Main {
                 }
 
                 case 7: {
-
-                    System.out.print("\nEnter Account Number: ");
-                    int acc_no = sc.nextInt();
-
-                    Customer c1 = null;
-
-                    for (Customer c : accounts) {
-                        if (c.getAccountNumber() == acc_no) c1 = c;
-                        break;
+                    System.out.println("\nAccount Details");
+                    if (accounts.isEmpty()) {
+                        System.out.println("No accounts available.");
+                    } else {
+                        for (Customer c : accounts) {
+                            display(c);
+                        }
                     }
-
-                    display(c1);
                     break;
                 }
 
@@ -178,9 +179,8 @@ public class Main {
 
     public static void display(Customer c1){
         if (c1 != null) {
-            System.out.println("\nAccount Details");
             System.out.printf("\n%-15s %-10s %-20s %-10s %-10s\n", "Name", "Type", "Email", "Acc No", "Balance");
-            System.out.printf("%-15s %-10s %-20s %-10d $%-10.2f\n",
+            System.out.printf("%-15s %-10s %-20s %-10d %-10.2f\n",
                     c1.getName(), c1.getAccountType(), c1.getEmail(), c1.getAccountNumber(), c1.getBalance());
         } else {
             System.out.println("Account not found.");
