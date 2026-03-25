@@ -227,9 +227,15 @@ public class LibraryManagementSystem {
     }
 
     private static Book findBook(List<Book> books,int id) {
-        return books.stream().filter(b -> b.getBookId() == id).findFirst().orElse(null);
+        for (Book b : books){
+            if (b.getBookId() == id) return b;
+        }
+        return null;
     }
     private static Member findMember(List<Member> members, int id) {
-        return members.stream().filter(m -> m.getMemberId() == id).findFirst().orElse(null);
+        for (Member m : members){
+            if (m.getMemberId() == id) return m;
+        }
+        return null;
     }
 }
