@@ -84,7 +84,7 @@ public class Main {
                 case 3: {
                     System.out.print("\nEnter Account Number: ");
                     int acc_no = sc.nextInt();
-                    System.out.print("\nEnter Amount to Withdraw: ");
+                    System.out.print("Enter Amount to Withdraw: ");
                     double amt = sc.nextDouble();
 
                     boolean isAccountExist = false;
@@ -102,7 +102,7 @@ public class Main {
 
                 case 4: {
 
-                    System.out.print("\nEnter Account Number: ");
+                    System.out.println("\nEnter Account Number: ");
                     int acc_no = sc.nextInt();
 
                     boolean isAccountExist = false;
@@ -122,9 +122,9 @@ public class Main {
 
                     System.out.print("\nEnter (From) Account Number : ");
                     int acc_no1 = sc.nextInt();
-                    System.out.print("\nEnter (To) Account Number: ");
+                    System.out.print("Enter (To) Account Number: ");
                     int acc_no2 = sc.nextInt();
-                    System.out.print("\nEnter Amount to Transfer: ");
+                    System.out.print("Enter Amount to Transfer: ");
                     double amt = sc.nextDouble();
 
                     Customer c1 = null;
